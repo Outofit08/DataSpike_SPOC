@@ -36,14 +36,25 @@ class ToolSelect(tk.Frame):
             os.chdir("C:/Users/Owner/PycharmProjects/DataSpike_SPOC/sherlock")
             os.system(varSource)
 
+        def execute_csv():
+            input_name = entry1.get()
+            entry1.delete(0, 'end')
+            varSource2 = "python3 sherlock " + input_name + " --print-found --csv"
+            os.chdir("C:/Users/Owner/PycharmProjects/DataSpike_SPOC/sherlock")
+            os.system(varSource2)
+
         label = tk.Label(top, text="Sherlock Launcher")
         entry1 = tk.Entry(top)
         entry1.pack()
-
-        b = tk.Button(top, text="Destroy me",
-                      command=lambda win=top: win.destroy())
         label.pack(side="top", fill="both", expand=True, padx=20, pady=20)
-        b.pack(side="bottom")
+        delete_b = tk.Button(top, text="Destroy me",
+                      command=lambda win=top: win.destroy())
+        delete_b.pack(side="bottom")
+
+        csv = tk.Button(top, text="save to csv",
+                      command=execute_csv)
+        csv.pack(side="bottom")
+
         os.system("git clone https://github.com/sherlock-project/sherlock.git")
         os.chdir("C:/Users/Owner/PycharmProjects/DataSpike_SPOC/sherlock")
         os.system("python3 -m pip install -r requirements.txt")
