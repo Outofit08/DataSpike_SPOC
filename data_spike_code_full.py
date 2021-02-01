@@ -56,7 +56,6 @@ class DataSpikeUiApp:
         self.url_entry = ttk.Entry(self.main_window)
         self.url_entry.configure(justify='left')
         self.url_entry.delete('0', 'end')
-        self.url_entry.insert('0', _text_)
         self.url_entry.grid(column='2', pady='20', row='4')
         self.url_button = ttk.Button(self.main_window, class_='url')
         self.url_button.configure(state='normal', style='Toolbutton', text='Search')
