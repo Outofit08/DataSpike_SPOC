@@ -1,6 +1,6 @@
 import tkinter as tk
 import tkinter.ttk as ttk
-
+import os
 
 class DataSpikeUiApp:
     def __init__(self, master=None):
@@ -12,8 +12,7 @@ class DataSpikeUiApp:
         self.username_label.configure(takefocus=False, text='Username')
         self.username_label.grid()
         self.user_entry = ttk.Entry(self.main_window, class_='username')
-        self.user_entry.configure(justify='center', validate='key')
-        self.user_entry.delete('0', 'end')
+        self.user_entry.configure(justify='left', validate='key')
         self.user_entry.grid(column='2', pady='20', row='0', sticky='n')
         self.username_button = ttk.Button(self.main_window, class_='username')
         self.username_button.configure(style='Toolbutton', takefocus=True, text='Search')
@@ -78,6 +77,12 @@ class DataSpikeUiApp:
         # Main widget
         self.mainwindow = self.main_window
 
+    def execute_Sherlock(self, user_entry):
+        input_name = user_entry.get()
+        user_entry.delete(0, 'end')
+        varSource = "python3 sherlock " + input_name
+        os.chdir("C:/Users/Owner/PycharmProjects/DataSpike_SPOC/sherlock")
+        os.system(varSource)
 
     def run(self):
         self.mainwindow.mainloop()
