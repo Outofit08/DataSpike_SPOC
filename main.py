@@ -29,7 +29,7 @@ class ToolSelect(tk.Frame):
         top.title("Sherlock")
         top.geometry("400x200")
 
-        def execute_Sherlock(self):
+        def execute_Sherlock():
             input_name = entry1.get()
             entry1.delete(0, 'end')
             varSource = "python3 sherlock " + input_name
