@@ -64,7 +64,7 @@ class DataSpikeUiApp:
 
         self.ip_label = ttk.Label(self.main_window, class_='ipAddress')
         self.ip_label.configure(font='TkDefaultFont', justify='left', padding='10', takefocus=False)
-        self.ip_label.configure(text='IP Address')
+        self.ip_label.configure(text='IP Address(Provide full script command)')
         self.ip_label.grid(row='5')
         self.ip_entry = ttk.Entry(self.main_window)
         self.ip_entry.configure(justify='left')
